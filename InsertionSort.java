@@ -1,7 +1,7 @@
 /**
- * Created by Song on 3/12/16.
+ * Created by Song on 3/19/16.
  */
-public class simpleStringSort {
+public class InsertionSort {
 
     public static void main(String[] args){
         //initilize array
@@ -13,11 +13,11 @@ public class simpleStringSort {
     }
 
     private static void sort(String[] names){
-        for(int i = 0; i < names.length; i++){ //get each element in the array
-            for (int j = i+1; j < names.length; j++) { //compare with other items in the array
-                if ((names[j].compareTo(names[i]) < 0)) { //if the next one less than the current one
-                    String temp = names[i]; //save current one in a temp variable
-                    names[i] = names[j]; //swap current one and the smallest one
+        for (int i = 0; i < names.length; i++){
+            for (int j = i; j > 0; j--){
+                if (names[j].compareTo(names[j-1]) < 0){
+                    String temp = names[j-1];
+                    names[j-1] = names[j];
                     names[j] = temp;
                 }
             }
